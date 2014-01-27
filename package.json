@@ -1,0 +1,48 @@
+{
+  "name": "bham",
+  "title": "BHAM",
+  "author": {
+	"name": "BHAM"
+  },
+  "description": "Behavior Health Advisory Module",
+  "homepage": "https://github.com/FEISystems/bham",
+  "version": "0.0.1-SNAPSHOT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FEISystems/bham.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FEISystems/bham/issues"
+  },
+  "licenses": [
+    {
+      "type": "",
+       "url": "https://github.com/FEISystems/bham/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "phantomjs": "~1.9",
+    "karma": "~0.10.4",
+    "karma-junit-reporter": "~0.1",
+    "karma-jasmine": "~0.1.3",   
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",    
+    "karma-phantomjs-launcher": "~0.1.0",    
+    "karma-ie-launcher": "~0.1.1",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.4.0",  
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-less": "~0.9.0",	
+    "grunt-recess": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-html2js": "~0.1.0",
+    "grunt-karma": "~0.6.2", 
+	"grunt-git-describe": "~2.3.2", 	
+    "grunt-protractor-runner": "~0.2.0",
+    "protractor": "~0.15.0"	
+  }
+}
