@@ -2,10 +2,10 @@
 
 angular.module('bham.patientModule', ['bham.patientService'])
 
+.value( 'patientList','#/patient')
+
 .config(['$routeProvider', function($routeProvider) {    
 		'use strict';
-		//$locationProvider.html5Mode(true);
-		//var baseUrl = "bham-crud-with-template/src/";
 		
 		$routeProvider
 			.when('/patient', {				
@@ -22,25 +22,24 @@ angular.module('bham.patientModule', ['bham.patientService'])
 			})
 			.when('/patient/edit/:id', {
 				templateUrl: "app/patient/patient-edit.tpl.html",
-				controller: 'EditPatientCtrl'				
+				controller: 'EditPatientCtrl'
 			})
 			.otherwise({
 				redirectTo: '/patient'
 			});
-
 }])
 
-.controller('ListPatientCtrl', ['$scope','$location','PatientService', function($scope, $location,PatientService){		
-		'use strict';
+.controller('ListPatientCtrl', ['$scope','$location','PatientService', 'patientList', function($scope, $location,PatientService, patientList){		
+		'use strict';		
+		
 		$scope.patients = PatientService.query();
 		
-		$scope.delete = function(patientId){		
+		$scope.delete = function(patientId){
 			var ok = confirm("Do you want to delete this patient?");
 			if( (typeof patientId != 'undefined')  && ok){
 				var patient = $scope.patients[patientId];
 				PatientService.delete(patientId);
-				$location.path('#/patient');
-				//$scope.redirect('/patient');
+				$location.path(patientList);
 				console.log('Patient : ' + patient.firstName + ' ' + patient.lastName + ' deleted.');
 			}else if((typeof patientId == 'undefined') || !ok ){
 				console.log("Patient not deleted.");
@@ -48,21 +47,23 @@ angular.module('bham.patientModule', ['bham.patientService'])
 		};
 }])
 
-.controller('EditPatientCtrl', ['$scope', '$routeParams','$location','PatientService', function($scope, $routeParams, $location, PatientService){				
+.controller('EditPatientCtrl', ['$scope', '$routeParams','$location','PatientService', 'patientList', function($scope, $routeParams, $location, PatientService, patientList){				
 		'use strict';
-		$scope.patient = PatientService.get($routeParams.id);	
+		$scope.patient = PatientService.get($routeParams.id);
 		
 		$scope.update = function(id, patient){
-			PatientService.update(id, patient);			
-			$scope.redirect('/patient');
+			PatientService.update(id, patient);
+			$location.path(patientList);
 		};		
 }])
 
-.controller('CreatePatientCtrl', ['$scope', '$routeParams','$location', 'PatientService', function($scope, $routeParams, $location, PatientService){				
+.controller('CreatePatientCtrl', ['$scope', '$routeParams','$location', 'PatientService', 'patientList', function($scope, $routeParams, $location, PatientService, patientList){				
+		'use strict';
 		$scope.add = function(patient){
-			PatientService.add(patient);			
-			$scope.redirect('/patient');
+			PatientService.add(patient);
+			$location.path(patientList);
 		};
+	
 }]);
 
 

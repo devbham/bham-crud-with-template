@@ -77,7 +77,7 @@ module.exports = function (grunt) {
 		
         clean: {
             all: [
-                'tmp',                             
+                '.tmp',                             
                 'build'
             ]
         },
@@ -190,12 +190,12 @@ module.exports = function (grunt) {
     ]);
 	
     // Default task.
-    grunt.registerTask('default', ['clean','jshint', 'concat', 'uglify', 'recess:min','copy']);
+    grunt.registerTask('default', ['clean','jshint', 'concat', 'uglify', 'recess','copy']);
 	
     // "Basic" Tasks
     grunt.registerTask('version', 'Shows version number', function () {
         var pkg = grunt.file.readJSON('package.json');
-        //console.log(pkg.name, pkg.version);
+        console.log(pkg.name, pkg.version);
     });
 	
 	//CI tasks

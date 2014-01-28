@@ -34,6 +34,10 @@
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		
+		<!-- BHAM styles-->
+		
+		<link rel="stylesheet" href="../dist/css/bham.min.css" />
 
 		<!--[if lte IE 8]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -213,14 +217,24 @@
 		
 		<!-- BHAM JS Files -->
 		<script src="../vendor/angular/angular.min.js"></script>
-		<script src="../vendor/angular-route/angular-route.min.js"></script>				
+		<script src="../vendor/angular-route/angular-route.min.js"></script>
+		<script src="../vendor/angular-resource/angular-resource.min.js"></script>
+		
+		<script src="app/bham.js"></script>
+		<script src="app/patient/patient.js"></script>
+		<script src="common/services/patientService.js"></script>
+		<script src="common/directives/directives.js"></script>
+		
+		<!-- 
 		<script src="../dist/app/bham.min.js"></script>		
+		-->
 		<script type="text/javascript">
 			
 			//Manually bootstrap an angularjs application
 			var htmlElt = document.getElementById('bhamRootElt');
-			angular.bootstrap( htmlElt, ['bham']);						
-			document.body.setAttribute('ng-app', 'bham');			
+			angular.bootstrap( htmlElt, ['bham']);
+			//Allows karma and potractor to do unit and e2e test
+			//document.body.setAttribute('ng-app', 'bham');			
 			
 		</script>	
 	</body>

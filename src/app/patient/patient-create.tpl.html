@@ -1,20 +1,20 @@
 
 <h3>Create patient {{patient.firstName}}</h3>
 
-<form novalidate class="form-horizontal bham-form" role="form">
+<form novalidate class="form-horizontal bham-form" role="form" name="createPatientForm" >
 	
 	<div class="form-group">
 		<label class="col-sm-3 control-label no-padding-right" for="patientMRN"> MRN </label>
 
 		<div class="col-sm-9">
-			<input type="text" ng-model="patient.MRN" id="patientMRN" placeholder="Patient MRN" class="col-xs-10 col-sm-5" />
+			<input type="number" ng-model="patient.MRN" id="patientMRN" ng-minlength="6" ng-maxlength="6"  placeholder="Patient MRN" class="col-xs-10 col-sm-5" />
 		</div>
 	</div>
-	<div class="form-group">
+	<div class="form-group" >
 		<label class="col-sm-3 control-label no-padding-right" for="patientFirstname"> First Name </label>
 
 		<div class="col-sm-9">
-			<input type="text" ng-model="patient.firstName" id="patientFirstname" placeholder="Patient first name" class="col-xs-10 col-sm-5" />
+			<input type="text" ng-model="patient.firstName" id="patientFirstname" name="firstname"  required placeholder="Patient first name" class="col-xs-10 col-sm-5" />			
 		</div>
 	</div>
 
@@ -24,7 +24,7 @@
 		<label class="col-sm-3 control-label no-padding-right" for="patientLastname"> Last Name </label>
 
 		<div class="col-sm-9">
-			<input type="text" ng-model="patient.lastName"  id="patientLastname" placeholder="Patient last name" class="col-xs-10 col-sm-5" />
+			<input type="text" ng-model="patient.lastName"  id="patientLastname" placeholder="Patient last name"  class="col-xs-10 col-sm-5" />
 		</div>
 	</div>
 
@@ -34,7 +34,7 @@
 		<label class="col-sm-3 control-label no-padding-right" for="patientDOB"> Date of Birth </label>
 
 		<div class="col-sm-9">
-			<input type="text" ng-model="patient.DOB" id="patientDOB" datepicker  placeholder="Patient date of birth" class="col-xs-10 col-sm-5" />
+			<input type="text" ng-model="patient.DOB" id="patientDOB" datepicker  placeholder="Patient date of birth"  class="col-xs-10 col-sm-5" />
 		</div>
 	</div>
 
@@ -44,7 +44,7 @@
 		<label class="col-sm-3 control-label no-padding-right" for="patientGender"> Gender</label>
 
 		<div class="col-sm-9">
-			<select ng-model="patient.gender">
+			<select ng-model="patient.gender" >
 				<option value="Male" ng-selected="patient.gender=='Male'">Male</option>
 				<option value="Female" ng-selected="patient.gender=='Female'">Female</option>
 			</select>				
@@ -52,10 +52,23 @@
 	</div>
 	
 	<div class="form-group">
+		<label class="col-sm-3 control-label no-padding-right" for="patientRace">Race</label>
+
+		<div class="col-sm-9">
+			<select ng-model="patient.race">
+				<option value="African" ng-selected="patient.race=='African'">African</option>
+				<option value="Asian" ng-selected="patient.race=='Asian'">Asian</option>
+				<option value="White" ng-selected="patient.race=='White'">White</option>				
+				<option value="Others" ng-selected="patient.race=='Others'">Others</option>
+			</select>				
+		</div>	
+	</div>
+	
+	<div class="form-group">
 		<label class="col-sm-3 control-label no-padding-right" for="patientSSN">SSN</label>
 
 		<div class="col-sm-9">
-			<input type="text" ng-model="patient.SSN" id="patientSSN" placeholder="Patient SNN" class="col-xs-10 col-sm-5" />
+			<input type="number" ng-model="patient.SSN" id="patientSSN" ng-minlength="9" ng-maxlength="9"   placeholder="Patient SNN" class="col-xs-10 col-sm-5" />
 		</div>
 	</div>
 	<div class="clearfix form-actions">
@@ -67,7 +80,7 @@
 			</button>
 			
 			&nbsp; &nbsp; &nbsp;
-			<button class="btn btn-info" type="button" ng-click="add(patient)">
+			<button class="btn btn-info" type="button" ng-click="add(patient)" >
 				<i class="icon-ok bigger-110"></i>
 				Save
 			</button>

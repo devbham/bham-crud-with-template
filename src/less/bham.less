@@ -2,10 +2,37 @@
 @errorColor:#FA787E;
 @okColor:#78FA89;
 
+@borderWidth:2px;
+@validColor:green;
+@invalidColor:red;
+
+/*
+
 input.ng-invalid.ng-dirty {
 	background-color: @errorColor;
 }
 
 input.ng-valid.ng-dirty {
 	background-color: @okColor;
+}
+
+.help-inline { margin-bottom: 9px; }
+
+.error { 
+	border: dashed @errorColor 1px; 		
+}
+
+.success {
+	border: dotted   @okColor 1px;	
+}
+
+*/
+
+
+input.ng-invalid.ng-dirty {
+	border: solid @invalidColor @borderWidth;
+}
+
+input.ng-valid.ng-dirty {
+	border: solid @validColor @borderWidth;
 }
