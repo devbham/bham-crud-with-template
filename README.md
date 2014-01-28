@@ -15,7 +15,7 @@
 ## To run the project
 
 * Copy the project into a webapp folder of an application server like tomcat
-* Open the browser and point it to the index.html file i.e. http://localhost:<PORT>/project-folder-name/src
+* Open the browser and point it to the index.html file i.e. http://localhost:port/project-folder-name/src
 
 
 ## To run Grunt tasks
