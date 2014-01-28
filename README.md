@@ -1,13 +1,14 @@
 
-# BHAM CRUD application demo
+# BHAM crud application demo
 
 ***
 
 ## Installation
-	To install the nodejs plugins run the following command in the root folder
-    ```
+
+*	To install the nodejs plugins run the following command in the root folder
+
     npm install
-    ```
+
 
 ## To run the project
 
