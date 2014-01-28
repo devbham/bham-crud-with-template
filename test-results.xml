@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 32.0.1700 (Windows 7)" package="undefined" timestamp="2014-01-28T01:37:41" id="0" hostname="TomsonNgassaPC" tests="6" errors="0" failures="0" time="2.261">
+  <testsuite name="Chrome 32.0.1700 (Windows 7)" package="undefined" timestamp="2014-01-28T15:22:42" id="0" hostname="TomsonNgassaPC" tests="6" errors="0" failures="0" time="0.994">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36"/>
     </properties>
-    <testcase name="should redirect" time="0.02" classname="Chrome 32.0.1700 (Windows 7).BhamModule BhamCtrl"/>
-    <testcase name="Should delete a patient" time="2.236" classname="Chrome 32.0.1700 (Windows 7).PatientModule ListPatientCtrl"/>
+    <testcase name="should redirect" time="0.019" classname="Chrome 32.0.1700 (Windows 7).BhamModule BhamCtrl"/>
+    <testcase name="Should delete a patient" time="0.97" classname="Chrome 32.0.1700 (Windows 7).PatientModule ListPatientCtrl"/>
     <testcase name="Should contain 5 patients" time="0.005" classname="Chrome 32.0.1700 (Windows 7).PatientModule ListPatientCtrl"/>
     <testcase name="Should get a patient" time="0" classname="Chrome 32.0.1700 (Windows 7).PatientModule EditPatientCtrl"/>
     <testcase name="Should update patient detail" time="0" classname="Chrome 32.0.1700 (Windows 7).PatientModule EditPatientCtrl"/>
