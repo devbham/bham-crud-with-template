@@ -21,10 +21,7 @@ jQuery(function($) {
 		var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
 		$(this).sparkline('html', {tagValuesAttribute:'data-values', type: 'bar', barColor: barColor , chartRangeMin:$(this).data('min') || 0} );
 	});
-
-
-
-
+	
 	var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
 	var data = [
 	{ label: "social networks",  data: 38.7, color: "#68BC31"},
@@ -90,10 +87,6 @@ jQuery(function($) {
 	}
 
 	});
-
-
-
-
 
 
 	var d1 = [];

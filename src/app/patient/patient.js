@@ -31,7 +31,8 @@ angular.module('bham.patientModule', ['bham.patientService'])
 
 .controller('ListPatientCtrl', ['$scope','$location','PatientService', 'patientList', function($scope, $location,PatientService, patientList){		
 		'use strict';		
-		
+		// var data = PatientService.query();
+		// console.log(data);
 		$scope.patients = PatientService.query();
 		
 		$scope.delete = function(patientId){

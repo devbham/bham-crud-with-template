@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<!-- 
+
 <html lang="en" ng-app="bham" ng-controller="BhamCtrl">
--->
-<html lang="en" id='bhamRootElt'>
 	<head>
 		<meta charset="utf-8" />
 		<title>BHAM</title>
@@ -212,9 +210,6 @@
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 				
-		<!-- inline scripts related to this page -->				 
-		<script src="assets/js/page-jquery.js"></script>				
-		
 		<!-- BHAM JS Files -->
 		<script src="../vendor/angular/angular.min.js"></script>
 		<script src="../vendor/angular-route/angular-route.min.js"></script>
@@ -225,17 +220,8 @@
 		<script src="common/services/patientService.js"></script>
 		<script src="common/directives/directives.js"></script>
 		
-		<!-- 
-		<script src="../dist/app/bham.min.js"></script>		
-		-->
-		<script type="text/javascript">
-			
-			//Manually bootstrap an angularjs application
-			var htmlElt = document.getElementById('bhamRootElt');
-			angular.bootstrap( htmlElt, ['bham']);
-			//Allows karma and potractor to do unit and e2e test
-			//document.body.setAttribute('ng-app', 'bham');			
-			
-		</script>	
+		<!-- inline scripts related to this page -->				 
+		<script src="assets/js/page-jquery.js"></script>				
+		
 	</body>
 </html>
