@@ -16,7 +16,7 @@
 			<a href="#">Home</a>
 		</li>
 		<li ng-repeat="breadcrumb in breadcrumbs()" >			
-			<a href="breadcrumb.path"><span ng-bind="breadcrumb.name"></span></a>
+			<a href="#{{breadcrumb.path}}"><span ng-bind="breadcrumb.name"></span></a>
 		</li>		
 	</ul><!-- .breadcrumb -->
 
