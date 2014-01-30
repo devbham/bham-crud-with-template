@@ -6,8 +6,8 @@ exports.config = {
     //seleniumArgs: ['-Dwebdriver.ie.driver=C:\Users\tomson.ngassa\AppData\Roaming\npm\node_modules\protractor\IEDriverServer.exe'],
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-          'browserName': 'chrome'
-        // 'browserName': 'firefox'
+        //'browserName': 'chrome'
+        'browserName': 'firefox'
         //'browserName': 'internet explorer'
     },
 

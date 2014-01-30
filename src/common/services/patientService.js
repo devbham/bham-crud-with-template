@@ -6,8 +6,8 @@ angular.module('bham.patientService', ['ngResource'])
 	/*
 	http://172.16.100.172:9000/api/patients
 	'https://api.github.com/repos/angular/angular.js/issues'
-	http://localhost:8087/PatientService/bham/patient/get
-	'http://localhost:8080/mt-rest/rest/user/2/todo'
+	http://172.16.60.151:8087/PatientService/bham/patient/get
+	'http://:8080/mt-rest/rest/user/2/todo'
 	*/
     var patients = [
 		{  MRN:123456, firstName:'Tomson', lastName:'Ngassa', DOB:'01/11/1990', gender:'Male', race:"African", SSN:123456789},
@@ -18,7 +18,7 @@ angular.module('bham.patientService', ['ngResource'])
     ];
 	
 	
-	// return  $resource('https://api.github.com/repos/angular/angular.js/issues'
+	// return  $resource('http://172.16.60.151:8080/mt-rest/rest/user/2/todo'
 						// , {}, 
 						// { query: { 
 									// method: 'GET', 
