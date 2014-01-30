@@ -1,10 +1,10 @@
-angular.module("bham.reportsModule", [])
+angular.module("bham.organizationModule", [])
 
 .config(['$routeProvider', function($routeProvider) {    
 		'use strict';
 		
 		$routeProvider			
-		.when('/reports', {				
-				template: "<h3>Reports</h3>",				
+		.when('/organization', {				
+				template: "<h3>Organization</h3>",				
 			});				
 }]);

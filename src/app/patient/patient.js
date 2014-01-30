@@ -2,30 +2,30 @@
 
 angular.module('bham.patientModule', ['bham.patientService'])
 
-.value( 'patientList','#/patient')
+.value( 'patientList','#/patients')
 
 .config(['$routeProvider', function($routeProvider) {    
 		'use strict';
 		
 		$routeProvider
-			.when('/patient', {				
+			.when('/patients', {				
 				templateUrl: "app/patient/patient-list.tpl.html",
 				controller: 'ListPatientCtrl'
 			})			
-			.when('/patient/create', {
+			.when('/patients/create', {
 				templateUrl: "app/patient/patient-create.tpl.html",
 				controller: 'CreatePatientCtrl'
 			})			
-			.when('/patient/delete/:id', {
+			.when('/patients/delete/:id', {
 				templateUrl: "app/patient/patient-list.tpl.html",
 				controller: 'DeletePatientCtrl'
 			})
-			.when('/patient/edit/:id', {
+			.when('/patients/edit/:id', {
 				templateUrl: "app/patient/patient-edit.tpl.html",
 				controller: 'EditPatientCtrl'
 			})
 			.otherwise({
-				redirectTo: '/patient'
+				redirectTo: '/patients'
 			});
 }])
 

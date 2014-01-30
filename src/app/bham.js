@@ -10,19 +10,27 @@ var bham = angular.module('bham', [
 		'bham.messagecenterModule',
 		'bham.reportsModule',
 		'bham.toolsandresourcesModule',
-		'bham.directives'
+		'bham.directives',
+		'bham.breadcrumbsModule'
 ])
+
 
 .config(['$routeProvider', function($routeProvider) {    
 		'use strict';
 		
 		$routeProvider			
-			.otherwise({
-				redirectTo: '/dashboard'
-			});
+			.when('/', {				
+				templateUrl: "app/patient/patient-list.tpl.html",
+				controller: 'ListPatientCtrl'
+			});				
 }])
-.controller('BhamCtrl', [ '$scope','$location', function($scope, $location){
+
+.controller('BhamCtrl', [ '$scope','$location','breadcrumbsService', function($scope, $location, breadcrumbsService){
 	'use strict';
+	
+	$scope.breadcrumbs = function(){
+			return	breadcrumbsService.getAll();
+	};	
 	
 	$scope.redirect = function(path){
 		$location.path(path);
