@@ -15,7 +15,7 @@ angular.module('bham.breadcrumbsModule', [])
 .factory('breadcrumbsService', ['$rootScope', '$location', 'menuItemsMap', function($rootScope, $location, menuItemsMap){
 
   var breadcrumbs = [];
-  var breadcrumbsService = {};
+//  var breadcrumbsService = {};
   
   $rootScope.$on('$routeChangeSuccess', function(event, current){
 
@@ -27,20 +27,19 @@ angular.module('bham.breadcrumbsModule', [])
     pathElements.shift();
     for (i=0; i<pathElements.length; i++) {
         var menuName = menuItemsMap[ pathElements[i]] || pathElements[i] ;
-        //console.log(  pathElements[i] + ' - ' + menuName );
       result.push({name: menuName , path: breadcrumbPath(i)});
     }
 
     breadcrumbs = result;
   });
 
-  breadcrumbsService.getAll = function() {	
-    return breadcrumbs;
-  };
+   return {
+       getAll : function(){
+           return breadcrumbs;
+       },
 
-  breadcrumbsService.getFirst = function() {
-    return breadcrumbs[0] || {};
-  };
-
-  return breadcrumbsService;
+       getFirst: function(){
+           return breadcrumbs[0] || {};
+       }
+   };
 }]);

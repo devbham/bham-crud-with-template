@@ -10,14 +10,29 @@
 				<a href="#">Home</a>
 			</li>
 			<li class="active">Dashboard</li>
+             <span ng-if="$last">
+                    <span ng-bind="breadcrumb.name">
+              </span>
+			<span ng-if="{{! $last}}">
+                    <a href="#{{breadcrumb.path}}"><span ng-bind="breadcrumb.name"></span></a>
+              </span>
+
 		-->
 		<li>
 			<i class="icon-home home-icon"></i>
 			<a href="#">Home</a>
 		</li>
-		<li ng-repeat="breadcrumb in breadcrumbs()" >			
-			<a href="#{{breadcrumb.path}}"><span ng-bind="breadcrumb.name"></span></a>
-		</li>		
+		<li ng-repeat="breadcrumb in breadcrumbs()" >
+             <span ng-if="$last">
+                   <span ng-bind="breadcrumb.name"></span>
+             </span>
+             <span ng-if="$index < ( breadcrumbs().length - 1 )">
+                   <a href="#{{breadcrumb.path}}"><span ng-bind="breadcrumb.name"></span></a>
+             </span>
+
+        </li>
+
+
 	</ul><!-- .breadcrumb -->
 
 	<div class="nav-search" id="nav-search">

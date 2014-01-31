@@ -35,7 +35,7 @@ angular.module('bham.patientModule', ['bham.patientService'])
 		// var data = PatientService.query();
 		// console.log(data);
 		$scope.patients = PatientService.query();
-		
+
 		$scope.delete = function(patientId){
 			var ok = confirm("Do you want to delete this patient?");
 			if( (typeof patientId != 'undefined')  && ok){
@@ -51,8 +51,9 @@ angular.module('bham.patientModule', ['bham.patientService'])
 
 .controller('EditPatientCtrl', ['$scope', '$routeParams','$location','PatientService', 'patientList', function($scope, $routeParams, $location, PatientService, patientList){				
 		'use strict';
-		$scope.patient = PatientService.get($routeParams.id);
-		
+
+        $scope.patient = PatientService.get($routeParams.id);
+
 		$scope.update = function(id, patient){
 			PatientService.update(id, patient);
 			$location.path(patientList);
@@ -61,7 +62,8 @@ angular.module('bham.patientModule', ['bham.patientService'])
 
 .controller('CreatePatientCtrl', ['$scope', '$routeParams','$location', 'PatientService', 'patientList', function($scope, $routeParams, $location, PatientService, patientList){				
 		'use strict';
-		$scope.add = function(patient){
+
+        $scope.add = function(patient){
 			PatientService.add(patient);
 			$location.path(patientList);
 		};
