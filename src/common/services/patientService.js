@@ -10,11 +10,11 @@ angular.module('bham.patientService', ['ngResource'])
 	'http://:8080/mt-rest/rest/user/2/todo'
 	*/
     var patients = [
-		{  MRN:123456, firstName:'Tomson', lastName:'Ngassa', DOB:'01/11/1990', gender:'Male', race:"African", SSN:123456789},
-		{  MRN:123456, firstName:'Himalay', lastName:'Majumdar', DOB:'01/11/1990', gender:'Male', race:"Asian", SSN:123456789},
-		{  MRN:123456, firstName:'Utish', lastName:'Rajkarnikar', DOB:'01/11/1990', gender:'Male', race:"Asian", SSN:123456789},
-		{  MRN:123456, firstName:'Tao',lastName:'Lin',DOB:'01/11/1990',gender:'Male', race:"Asian", SSN:123456789},
-		{  MRN:123456, firstName:'Joel',lastName:'Amoussou',DOB:'01/11/1990',gender:'Male', race:"African", SSN:123456789}
+		{ MRN:123456, firstName:'Tomson', lastName:'Ngassa', DOB:'01/11/1990', gender:'Male', race:"African", SSN:123456789},
+		{ MRN:123456, firstName:'Himalay', lastName:'Majumdar', DOB:'01/11/1990', gender:'Male', race:"Asian", SSN:123456789},
+		{ MRN:123456, firstName:'Utish', lastName:'Rajkarnikar', DOB:'01/11/1990', gender:'Male', race:"Asian", SSN:123456789},
+		{ MRN:123456, firstName:'Tao',lastName:'Lin',DOB:'01/11/1990',gender:'Male', race:"Asian", SSN:123456789},
+		{ MRN:123456, firstName:'Joel',lastName:'Amoussou',DOB:'01/11/1990',gender:'Male', race:"African", SSN:123456789}
     ];
 	
 	

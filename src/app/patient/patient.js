@@ -37,13 +37,12 @@ angular.module('bham.patientModule', ['bham.patientService'])
 		$scope.patients = PatientService.query();
 
 		$scope.delete = function(patientId){
-			var ok = confirm("Do you want to delete this patient?");
-			if( (typeof patientId != 'undefined')  && ok){
+			if( angular.isDefined(patientId) && patientId !== null){
 				var patient = $scope.patients[patientId];
 				PatientService.delete(patientId);
 				$location.path(patientList);
 				console.log('Patient : ' + patient.firstName + ' ' + patient.lastName + ' deleted.');
-			}else if((typeof patientId == 'undefined') || !ok ){
+			}else {
 				console.log("Patient not deleted.");
 			}	
 		};

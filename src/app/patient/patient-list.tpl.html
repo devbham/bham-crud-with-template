@@ -35,9 +35,16 @@
 								<a class="green" href="#/patients/edit/{{$index}}">
 									<i class="icon-pencil bigger-130"></i>
 								</a>
-								<a class="red" href="#" ng-click="delete($index)" >
+                                <a class="red" href="#"  deletedialog  patientid= "{{ $index }}" ondelete="delete(patientId)" >
+                                    <i class="icon-trash bigger-130"></i>
+                                </a>
+
+								<!--
+								<a class="red" href="#"  ng-click="delete($index)" >
 									<i class="icon-trash bigger-130"></i>
 								</a>
+								-->
+
 							</div>
 						</td>											
 						<td> {{ patient.MRN }}</td>
@@ -57,7 +64,22 @@
 			</div>
 		</div> 		
 	</div> 		 	
-</div> 
+</div>
+
+<div id="dialog-confirm" class="hide">
+    <div class="alert alert-info bigger-110">
+        These Patient will be permanently deleted and cannot be recovered.
+    </div>
+
+    <div class="space-6"></div>
+
+    <p class="bigger-110 bolder center grey">
+        <i class="icon-hand-right blue bigger-120"></i>
+        Are you sure?
+    </p>
+</div><!-- #dialog-confirm -->
+
+
 
 
 

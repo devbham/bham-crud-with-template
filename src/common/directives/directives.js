@@ -34,4 +34,47 @@ angular.module("bham.directives", [])
 				});				
         }
 	};
+})
+
+.directive("deletedialog", function(){
+    return {
+        restrict: 'A',
+        scope: {
+            patientid:'@',
+            ondelete:'&'
+        },
+        link : function (scope, element, attrs) {
+
+            element.on('click', function(e){
+                 e.preventDefault();
+
+                $( "#dialog-confirm" ).removeClass('hide').dialog({
+                    resizable: false,
+                    modal: true,
+                    //title: '<div class="widget-header"><h4 class="smaller"><i class="icon-warning-sign red"></i> Empty the recycle bin?</h4></div>',
+                    title: '',
+                    title_html: true,
+                    buttons: [
+                        {
+                            html: "<i class='icon-trash bigger-110'></i>&nbsp; Delete patient",
+                            "class" : "btn btn-danger btn-xs",
+                            click: function() {
+                                console.log("Patient ID from directive: " + scope.patientid)
+                                scope.ondelete({patientId:scope.patientid});
+                                $( this ).dialog( "close" );
+                            }
+                        }
+                        ,
+                        {
+                            html: "<i class='icon-remove bigger-110'></i>&nbsp; Cancel",
+                            "class" : "btn btn-xs",
+                            click: function() {
+                                $( this ).dialog( "close" );
+                            }
+                        }
+                    ]
+                });
+            });
+        }
+    };
 });
